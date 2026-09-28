@@ -1,0 +1,202 @@
+# Reactor Geometry
+
+## 1. Project Objective
+
+This project investigates the computational modelling of multiphase systems involving non-Newtonian fluids using ANSYS Fluent.
+
+The primary objective is to develop a CFD model of a 2D fluidized-bed reactor to investigate multiphase flow behaviour, phase distribution, and liquid-phase collection using an internal Y-shaped collector.
+
+The study aims to understand the interaction between gas, liquid, and solid phases and evaluate the influence of the internal collector geometry on liquid-phase collection and reactor performance.
+
+---
+
+## 2. Reactor Configuration
+
+The computational domain consists of a **2D vertical fluidized-bed reactor**.
+
+### General Configuration
+
+- **Model:** 2D planar
+- **Reactor orientation:** Vertical
+- **Coordinate system:** X-Y plane
+- **X-axis:** Horizontal direction
+- **Y-axis:** Vertical/upward direction
+- **Axisymmetric:** No
+- **Sector model:** No
+- **Periodic boundaries:** No
+
+The reactor contains an internal **Y-shaped structure** designed specifically for **liquid-phase collection**.
+
+The Y-shaped structure is intended to:
+
+- Collect the liquid phase from the reactor
+- Provide a pathway for liquid collection
+- Facilitate subsequent liquid recirculation
+- Allow investigation of the effect of internal geometry on liquid-phase behaviour
+
+The Y-shaped structure is **not intended to collect the gas or solid phases**.
+
+The collected liquid will subsequently be recirculated using a pump. The pump itself will not be explicitly represented as a physical pump geometry in the 2D computational domain.
+
+---
+
+## 3. Geometry
+
+The reactor is represented as a 2D vertical computational domain containing the internal Y-shaped liquid collector.
+
+### Y-Shaped Collector Dimensions
+
+| Parameter | Dimension |
+|---|---:|
+| H2 | 10 mm |
+| L5 | 2.5 mm |
+| L6 | 2.5 mm |
+| V1 | 30 mm |
+| V3 | 15 mm |
+| V4 | 15 mm |
+
+> **Note:** These dimensions correspond to the current geometry and may be modified during the development and optimization of the reactor design.
+
+### Overall Reactor Dimensions
+
+| Parameter | Value |
+|---|---:|
+| Reactor height | To be finalized |
+| Reactor width | To be finalized |
+| Model type | 2D planar |
+| Orientation | Vertical |
+
+---
+
+## 4. Inlet and Outlet Configuration
+
+The final inlet and outlet configuration will be defined according to the operating conditions and selected multiphase-flow model.
+
+### Inlets
+
+The following parameters will be specified during the final CFD setup:
+
+- Inlet type
+- Location
+- Dimensions
+- Entering phase(s)
+- Velocity or mass-flow condition
+- Phase volume fractions
+
+### Main Outlet
+
+The main reactor outlet will be defined according to the final reactor configuration.
+
+### Liquid Collector Outlet
+
+The outlet connected to the Y-shaped structure is intended for **liquid collection and subsequent recirculation**.
+
+### Pump
+
+The pump will not be explicitly modelled as a physical pump geometry in the 2D domain. Its effect will be incorporated later using an appropriate CFD formulation.
+
+---
+
+## 5. Walls and Internal Structure
+
+The reactor walls form the external boundaries of the computational domain.
+
+The internal Y-shaped collector introduces additional wall surfaces that influence the local multiphase flow and liquid collection behaviour.
+
+### Internal Structure
+
+**Y-shaped liquid collector**
+
+Function:
+
+- Liquid collection
+- Flow guidance
+- Investigation of liquid-phase distribution
+- Investigation of liquid collection performance
+
+No additional baffles, draft tubes, spargers, porous plates, or support grids are currently included.
+
+---
+
+## 6. Multiphase Configuration
+
+The reactor is intended to investigate a multiphase system involving:
+
+- Gas phase
+- Liquid phase
+- Solid phase
+
+The study will investigate the interaction between these phases within the fluidized-bed reactor.
+
+The liquid phase is of particular interest because the internal Y-shaped structure is specifically designed to collect it.
+
+The final initial phase distribution, volume fractions, and operating conditions will be defined during the ANSYS Fluent setup.
+
+---
+
+## 7. Liquid Collection Concept
+
+The conceptual arrangement is:
+
+**Multiphase flow → Y-shaped collector → Liquid collection → Pump → Liquid recirculation**
+
+The Y-shaped structure selectively collects the **liquid phase**, while gas and solid phases remain part of the main reactor flow.
+
+---
+
+## 8. Geometry Development Workflow
+
+1. Define overall reactor dimensions.
+2. Establish the coordinate system.
+3. Create the 2D reactor domain.
+4. Add the Y-shaped liquid collector.
+5. Define collector dimensions.
+6. Create fluid regions.
+7. Define inlet and outlet boundaries.
+8. Define reactor and collector walls.
+9. Check geometric connectivity.
+10. Generate the computational mesh.
+11. Check mesh quality.
+12. Import the geometry into ANSYS Fluent.
+13. Define the multiphase CFD model.
+
+---
+
+## 9. Geometry Verification
+
+Before starting the CFD simulation, the following will be checked:
+
+- Overall reactor dimensions
+- Y-shaped collector dimensions
+- Fluid-region connectivity
+- Inlet/outlet connectivity
+- Wall boundaries
+- Collector outlet connectivity
+- Unintended gaps or overlaps
+- Face naming
+- Mesh quality
+
+---
+
+## 10. Current Status
+
+- **Project:** CFD Simulations of Multiphase Systems Involving Non-Newtonian Fluids
+- **CFD Software:** ANSYS Fluent 2026 R1
+- **Geometry:** 2D planar
+- **Reactor:** Fluidized-bed reactor
+- **Internal structure:** Y-shaped liquid collector
+- **Liquid collection:** Yes
+- **Gas collection by Y-structure:** No
+- **Solid collection by Y-structure:** No
+- **Pump geometry:** Not explicitly modelled
+- **Geometry development:** In progress
+
+---
+
+## 11. Design Principle
+
+The central design concept is:
+
+> **An internal Y-shaped structure is used specifically for liquid-phase collection within a multiphase fluidized-bed reactor.**
+
+The geometry will be used to investigate multiphase flow behaviour, phase distribution, liquid collection, and reactor performance.
